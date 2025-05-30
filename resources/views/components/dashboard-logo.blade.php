@@ -1,0 +1,1 @@
+<img src="{{asset('images/Logo Dapute Fix-03.png')}}" alt="Logo" style="width: 100px; height: 100px;">
