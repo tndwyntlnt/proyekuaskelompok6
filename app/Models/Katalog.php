@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Storage;
 
 class Katalog extends Model
 {
@@ -13,4 +14,13 @@ class Katalog extends Model
         'name',
         'image',
     ];
+
+    protected static function booted()
+    {
+        static::deleting(function ($katalog) {
+            if ($katalog->image) {
+                Storage::disk('public')->delete($katalog->image);
+            }
+        });
+    }
 }

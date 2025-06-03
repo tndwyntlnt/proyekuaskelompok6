@@ -13,6 +13,7 @@ use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Filament\Forms\Components\FileUpload;
+use pxlrbt\FilamentExcel\Actions\Tables\ExportBulkAction;
 
 class KatalogResource extends Resource
 {
@@ -33,7 +34,7 @@ class KatalogResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('name'),
+                Tables\Columns\TextColumn::make('name')->sortable()->searchable(),
                 Tables\Columns\TextColumn::make('image'),
                 Tables\Columns\ImageColumn::make('image'),
             ])
@@ -46,6 +47,7 @@ class KatalogResource extends Resource
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
+                    ExportBulkAction::make(),
                     Tables\Actions\DeleteBulkAction::make(),
                 ]),
             ]);

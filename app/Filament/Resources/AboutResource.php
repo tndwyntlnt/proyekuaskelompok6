@@ -12,6 +12,7 @@ use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use pxlrbt\FilamentExcel\Actions\Tables\ExportBulkAction;
 
 class AboutResource extends Resource
 {
@@ -33,7 +34,7 @@ class AboutResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('about'),
+                Tables\Columns\TextColumn::make('about')->sortable()->searchable(),
             ])
             ->filters([
                 //
@@ -44,6 +45,7 @@ class AboutResource extends Resource
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
+                    ExportBulkAction::make(),
                     Tables\Actions\DeleteBulkAction::make(),
                 ]),
             ]);

@@ -9,6 +9,7 @@
         </p>
     </header>
 
+    @if (auth()->user()->usertype === null)
     <form method="post" action="{{ route('password.update') }}" class="mt-6 space-y-6">
         @csrf
         @method('put')
@@ -45,4 +46,9 @@
             @endif
         </div>
     </form>
+    @else
+        <p class="mt-6 text-sm text-red-600">
+            {{ __('Admin tidak diperbolehkan mengubah password.') }}
+        </p>
+    @endif
 </section>

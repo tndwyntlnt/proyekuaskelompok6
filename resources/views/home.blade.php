@@ -128,8 +128,8 @@
                     <img src="{{ asset('storage/01JWBA5QFNJJCNJTR4S38S78X5.jpg') }}" alt="Produk 7" data-filter="kue sagu keju" />
                     <img src="{{ asset('storage/01JWBA3619N7ZFZ8RHWHARBDTY.jpg') }}" alt="Produk 8" data-filter="kue sagu keju" />
                     <img src="{{ asset('storage/01JWBA9E1XKNBRYRACHNEFE2PB.jpg') }}" alt="Produk 9" data-filter="putri salju" />
-                    <img src="{{ asset('storage/01JWBAATDR9AG9N0Y8YA453ARC.jpg') }}" alt="Produk 10" data-filter="kastengel" />
-                    <img src="{{ asset('storage/01JWQ90JBMEX0PJ7VEZ1YWYTH7.jpg') }}" alt="Produk 1" data-filter="hampers" />
+                    <img src="{{ asset('storage/01JWTNWZFR4DWEGE8F7C5XAYJD.jpg') }}" alt="Produk 10" data-filter="kastengel" />
+                    <img src="{{ asset('storage/01JWTP03QMPCJNE7SH50TDBQMQ.jpg') }}" alt="Produk 1" data-filter="hampers" />
                 </div>
             </div>
         </div>

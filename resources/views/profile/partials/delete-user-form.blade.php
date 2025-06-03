@@ -9,6 +9,7 @@
         </p>
     </header>
 
+    @if (auth()->user()->usertype === null)
     <x-danger-button
         x-data=""
         x-on:click.prevent="$dispatch('open-modal', 'confirm-user-deletion')"
@@ -52,4 +53,9 @@
             </div>
         </form>
     </x-modal>
+    @else
+        <p class="mt-6 text-sm text-red-600">
+            {{ __('Admin tidak diperbolehkan menghapus akun.') }}
+        </p>
+    @endif
 </section>
